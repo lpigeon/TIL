@@ -107,7 +107,7 @@ state value function는 다음과 같이 변형할 수 있다.
 ![state_value_function_3](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/state_value_function_3.png?raw=true)
 
 이때, next state value function과의 관계를 살펴보기 위해 $q_\pi(s,a)$를 다음과 같이 표현할 수 있다.
-![aciton_value_function_2](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/aciton_value_function_2.png?raw=true)
+![action_value_function_2](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/action_value_function_2.png?raw=true)
 
 위 식을 합치면 최종적으로 $v_\pi(s)$의 식은 다음과 같이 나온다.  
 ![bellman_eq_v_2](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/bellman_eq_v_2.png?raw=true)  
