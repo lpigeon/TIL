@@ -2,8 +2,8 @@
 
 ## 3.1 The Agent-Environment Interface  
 
-해결할려는 문제 => 각 상태 s에서 각 행동 a의 가치 $q_*(s,a)$가 주어졌을때 각 상태 $v_*(s)$의 가치를 추정하는 것.  
-앞선 bandit problem과 다른 것은 bandit problem은 각 행동 a의 가치를 추정함 -> $q_*(a)$.
+해결할려는 문제 => 각 상태 s에서 각 행동 a의 가치 $q^*(s,a)$가 주어졌을때 각 상태 $v^*(s)$의 가치를 추정하는 것.  
+앞선 bandit problem과 다른 것은 bandit problem은 각 행동 a의 가치를 추정함 -> $q^*(a)$.
 
 ### Markov Decision Processes(MDP)
 
@@ -117,24 +117,24 @@ state value function는 다음과 같이 변형할 수 있다.
 
 ## 3.6 Optimal Policies and Optimal Value Functions  
 
-$optimal$ $policy$란 최소한 하나의 정책은 다른 모든 정책보다 우수하거나 동일하다는 것이다. 이러한 optimal policy는 $\pi_*$라고 표기하며 ($\pi_*$가 두개 이상일 수도 있다.) 동일한 상태 가치 함수를 공유한다. 그러한 상태 가치 함수를 $optimal$ $state-value$ $function$이라고 하며 $v_*$라고 표기한다. 또한, optimal policy는 동일한 행동 가치 함수를 공유하며 그러한 행동 가치 함수를 $optimal$ $action-value$ $function$이라고 하며 $q_*$라고 표기한다. 다음은 $v_*$ 와 $q_*$ 정의이다.  
+$optimal$ $policy$란 최소한 하나의 정책은 다른 모든 정책보다 우수하거나 동일하다는 것이다. 이러한 optimal policy는 $\pi^*$라고 표기하며 ($\pi^*$가 두개 이상일 수도 있다.) 동일한 상태 가치 함수를 공유한다. 그러한 상태 가치 함수를 $optimal$ $state-value$ $function$이라고 하며 $v^*$라고 표기한다. 또한, optimal policy는 동일한 행동 가치 함수를 공유하며 그러한 행동 가치 함수를 $optimal$ $action-value$ $function$이라고 하며 $q^*$라고 표기한다. 다음은 $v^*$ 와 $q^*$ 정의이다.  
 
 ![optimal_state_value_function](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/optimal_state_value_function.png?raw=true)  
 ![optimal_action_value_function](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/optimal_action_value_function.png?raw=true)  
 
-$q_*$를 $v_*$를 사용하여 표현하면 다음과 같다.  
+$q^*$를 $v^*$를 사용하여 표현하면 다음과 같다.  
 ![q_star](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/q_star.png?raw=true)  
 
-$optimal$ $policy$를 따르는 Bellman equation을 Bellman Optimality Equation이라고 한다. 다음은 $v_*$ 와 $q_*$의 Bellman Optimality Equation이다.  
+$optimal$ $policy$를 따르는 Bellman equation을 Bellman Optimality Equation이라고 한다. 다음은 $v^*$ 와 $q^*$의 Bellman Optimality Equation이다.  
 
 ![v_bellman_optimality_equation](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/v_bellman_optimality_equation.png?raw=true)  
 ![q_bellman_optimality_equation](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter3/q_bellman_optimality_equation.png?raw=true)  
 
-유한한 MDP에 대해서 $v_*$의 Bellman Optimality Equation은 유일한 해를 가지고 있다고 한다. 즉, 각 상태에 대한 하나의 방정식이 주어진 방정식 시스템이다. 환경의 dynamics $p$FMF 알고 있다면, 원칙적으로 $v_*$와 $q_*$비선형 방정식을 해결할 수 있다.  
+유한한 MDP에 대해서 $v^*$의 Bellman Optimality Equation은 유일한 해를 가지고 있다고 한다. 즉, 각 상태에 대한 하나의 방정식이 주어진 방정식 시스템이다. 환경의 dynamics $p$를 알고 있다면, 원칙적으로 $v^*$와 $q^*$비선형 방정식을 해결할 수 있다.  
 
 ### one-step search  
 
-$v_*$를 구한 후에는 비교적 쉽게 $optimal$ $policy$를 구할 수 있다. 어떠한 s에 상황에서 다음 하나 이상의 aciotn의 Bellman Optimality Equation의 최댓값을 얻을 수 있을 것이다. 이러한 action에만 0 이상의 확률을 할당하는 최적 정책을 취하면 이러한 것을 one-step search라고 한다. 우리는 이러한 action만 찾아가도(greedy) 최적 정책을 찾을 수 있다. 왜냐하면 Bellman Optimality Equation에 의해 $v_*$이후에 일어날 모든 action의 보상결과가 이미 반영되어 있기 때문이다.  
+$v^*$를 구한 후에는 비교적 쉽게 $optimal$ $policy$를 구할 수 있다. 어떠한 s에 상황에서 다음 하나 이상의 aciotn의 Bellman Optimality Equation의 최댓값을 얻을 수 있을 것이다. 이러한 action에만 0 이상의 확률을 할당하는 최적 정책을 취하면 이러한 것을 one-step search라고 한다. 우리는 이러한 action만 찾아가도(greedy) 최적 정책을 찾을 수 있다. 왜냐하면 Bellman Optimality Equation에 의해 $v^*$이후에 일어날 모든 action의 보상결과가 이미 반영되어 있기 때문이다.  
 
 ### Bellman Optimality Equation 풀이 가능성  
 
