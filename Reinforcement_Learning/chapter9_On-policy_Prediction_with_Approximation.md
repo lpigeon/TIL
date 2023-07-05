@@ -76,7 +76,7 @@ State aggregation은 함수 근사를 일반화하는 단순한 형태인데, �
 
 ![sgd_linear](https://github.com/lpigeon/TIL/blob/main/Reinforcement_Learning/img/chapter9/sgd_linear.png?raw=true)  
 
-선형 SGD의 경우 하나의 최적점, 즉 전역 최저점 또는 그 근처에 수렴한다는 것을 보장한다. 예를 들어, Gradient MC 방법은 선형 함수 근사에서 $\overline{VE}$의 전역 최적점ㅁ수렴을 보장한다.  
+선형 SGD의 경우 하나의 최적점, 즉 전역 최저점 또는 그 근처에 수렴한다는 것을 보장한다. 예를 들어, Gradient MC 방법은 선형 함수 근사에서 $\overline{VE}$의 전역 최적점 수렴을 보장한다.  
 
 반면, Semi-gradient TD(0)의 경우 선형 함수를 쓰면 수렴은 하지만 전역 최적점이 아닌 지역 최적점 근처로 수렴된다. 매 step t에서의 업데이트를 풀어쓰면 아래가 된다. 이때, $x_t$는 $x(S_t)$를 의미한다.  
 
